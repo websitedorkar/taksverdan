@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Roboto, Inter, Open_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable} ${roboto.variable} ${open_sans.variable}`}>
       <body>
+        <Header />
         <div className="overflow-hidden z-[2] relative">{children}</div>
         <Footer />
       </body>
