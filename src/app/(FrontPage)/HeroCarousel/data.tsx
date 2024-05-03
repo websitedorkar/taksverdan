@@ -40,4 +40,80 @@ const slides: SlidesJSON[] = [
   },
 ]
 
-export { slides };
+interface LocationJSON {
+  id: number;
+  value: string;
+  label: string;
+}
+const locations: LocationJSON[] = [
+  {
+    id: 1,
+    value: 'tour-1',
+    label: 'Tour 1',
+  },
+  {
+    id: 2,
+    value: 'tour-2',
+    label: 'Tour 2',
+  },
+  {
+    id: 3,
+    value: 'tour-3',
+    label: 'Tour 3',
+  },
+  {
+    id: 4,
+    value: 'tour-4',
+    label: 'Tour 4',
+  },
+  {
+    id: 5,
+    value: 'tour-5',
+    label: 'Tour 5',
+  },
+  {
+    id: 6,
+    value: 'tour-6',
+    label: 'Tour 6',
+  },
+]
+
+interface ToursJSON {
+  id: number;
+  value: string;
+  label: string;
+}
+const tours: ToursJSON[] = [
+  {
+    id: 1,
+    value: 'tour-1',
+    label: 'Tour 1',
+  },
+  {
+    id: 2,
+    value: 'tour-2',
+    label: 'Tour 2',
+  },
+  {
+    id: 3,
+    value: 'tour-3',
+    label: 'Tour 3',
+  },
+  {
+    id: 4,
+    value: 'tour-4',
+    label: 'Tour 4',
+  },
+  {
+    id: 5,
+    value: 'tour-5',
+    label: 'Tour 5',
+  },
+  {
+    id: 6,
+    value: 'tour-6',
+    label: 'Tour 6',
+  },
+]
+
+export { slides, locations, tours };
