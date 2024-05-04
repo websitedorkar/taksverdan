@@ -11,7 +11,11 @@ interface SubmenuItem {
 interface SubmenuCountry {
   type: 'country';
   name: string;
-  list: SubmenuItem[];
+  group: {
+    id: number;
+    name: string;
+    list: SubmenuItem[];
+  }[];
 }
 
 interface SubmenuDropdown {
@@ -34,25 +38,79 @@ const menus: MenusJSON[] = [
     label: 'Destinations',
     submenu: {
       type: 'country',
-      name: 'Asia',
-      list: [
+      name: 'Countries',
+      group: [
         {
           id: 1,
-          value: "nepal",
-          label: "Nepal",
-          thumb: Flag_1,
+          name: 'Asia',
+          list: [
+            {
+              id: 1,
+              value: "nepal",
+              label: "Nepal",
+              thumb: Flag_1,
+            },
+            {
+              id: 2,
+              value: "india",
+              label: "India",
+              thumb: Flag_1,
+            },
+            {
+              id: 3,
+              value: "thailand",
+              label: "Thailand",
+              thumb: Flag_1,
+            },
+          ]
         },
         {
           id: 2,
-          value: "india",
-          label: "India",
-          thumb: Flag_1,
+          name: 'South America',
+          list: [
+            {
+              id: 1,
+              value: "nepal",
+              label: "Nepal",
+              thumb: Flag_1,
+            },
+            {
+              id: 2,
+              value: "india",
+              label: "India",
+              thumb: Flag_1,
+            },
+            {
+              id: 3,
+              value: "thailand",
+              label: "Thailand",
+              thumb: Flag_1,
+            },
+          ]
         },
         {
           id: 3,
-          value: "thailand",
-          label: "Thailand",
-          thumb: Flag_1,
+          name: 'Europe',
+          list: [
+            {
+              id: 1,
+              value: "nepal",
+              label: "Nepal",
+              thumb: Flag_1,
+            },
+            {
+              id: 2,
+              value: "india",
+              label: "India",
+              thumb: Flag_1,
+            },
+            {
+              id: 3,
+              value: "thailand",
+              label: "Thailand",
+              thumb: Flag_1,
+            },
+          ]
         },
       ]
     },
@@ -61,21 +119,22 @@ const menus: MenusJSON[] = [
     id: 2,
     slug: 'inspiration',
     label: 'Inspiration',
-    // submenu: {
-    //   type: 'dropdown',
-    //   list: [
-    //     {
-    //       id: 1,
-    //       slug: 'travel-blog',
-    //       label: 'Travel Blog',
-    //     },
-    //     {
-    //       id: 2,
-    //       slug: 'recommendations',
-    //       label: 'Recommendations',
-    //     },
-    //   ]
-    // }
+    submenu: {
+      type: 'dropdown',
+      name: 'Dropdown Menu',
+      list: [
+        {
+          id: 1,
+          slug: 'travel-blog',
+          label: 'Travel Blog',
+        },
+        {
+          id: 2,
+          slug: 'recommendations',
+          label: 'Recommendations',
+        },
+      ]
+    }
   },
   {
     id: 3,
