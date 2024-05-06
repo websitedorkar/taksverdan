@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import React from 'react';
-import BG from './img/bg.png';
+import BG from '@/images/bg-art.svg';
 import CalenderSVG from './img/calender.svg';
 import ArrowLeft from '@/images/arrow-left.svg';
 import ArrowRight from '@/images/arrow-right.svg';
