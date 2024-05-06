@@ -15,7 +15,6 @@ const Footer = () => {
         <div className="bg-light rounded-2xl">
             <div className="pt-[100px] pb-[70px]">
                 <div className="container-fluid">
-                    {/* <div className="grid px-4 grid-cols-[1fr_0.75fr] gap-x-6 gap-y-14 md:grid-cols-[3fr_2fr_2fr_auto]"> */}
                     <div className="grid-cols-[1fr_0.75fr] md:grid-cols-none md:grid-flow-col grid gap-x-6 gap-y-14">
                     { blocks && blocks.map((block) => {
                         switch (block.type) {
@@ -70,11 +69,11 @@ const Footer = () => {
             <div className="py-[30px]">
                 <div className="container-fluid">
                     <div className="flex gap-y-3 flex-col md:flex-row items-center justify-between">
-                        <div className='md:order-1'>
+                        <div className='md:order-2'>
                             <Image src={Logo} alt='logo' className='max-w-[33px]' />
                         </div>
-                        <div className='md:order-2 font-inter font-normal text-base'>TAKs verden © Copyright 2024</div>
-                        <ul className='flex flex-wrap items-center gap-[15px]'>
+                        <div className='md:order-1 font-inter font-normal text-base'>TAKs verden © Copyright 2024</div>
+                        <ul className='md:order-3 flex flex-wrap items-center gap-[15px]'>
                             <li><Link href={'#'}>Privacy Policy</Link></li>
                             <li><span className="w-[1px] h-[20px] bg-black block"></span></li>
                             <li><Link href={'#'}>Terms of Service</Link></li>

@@ -19,6 +19,7 @@ import Search from './Search';
 
 
 const HeroCarousel = () => {
+    
     return (
     <div className='p-4'>
 
@@ -52,7 +53,7 @@ const HeroCarousel = () => {
                     clickable: true,
                     bulletClass: "swiper-pagination-bullet",
                     bulletActiveClass: "swiper-pagination-bullet-active",
-                  }}
+                }}
                 // pagination={{ clickable: true }}
                 breakpoints={{
                     0: {
