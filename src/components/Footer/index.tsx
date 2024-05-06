@@ -6,25 +6,25 @@ import Logo from './img/logo.svg';
 import FC from './img/fc.svg';
 
 const Heading = ({ title }: { title: string }) => (
-    <h3 className='font-poppins text-lg xl:text-xl font-medium mb-5'>{ title }</h3>
+    <h3 className='font-poppins text-base xl:text-lg font-medium mb-5'>{ title }</h3>
 )
 
 const Footer = () => {
   return (
     <footer className='p-4'>
         <div className="bg-light rounded-2xl">
-            <div className="py-[100px]">
+            <div className="pt-[100px] pb-[70px]">
                 <div className="container-fluid">
-                    <div className="grid px-4 grid-cols-[1fr_auto] gap-x-6 gap-y-14 md:grid-cols-[3fr_2fr_2fr_auto]">
+                    {/* <div className="grid px-4 grid-cols-[1fr_0.75fr] gap-x-6 gap-y-14 md:grid-cols-[3fr_2fr_2fr_auto]"> */}
+                    <div className="grid-cols-[1fr_0.75fr] md:grid-cols-none md:grid-flow-col grid gap-x-6 gap-y-14">
                     { blocks && blocks.map((block) => {
                         switch (block.type) {
                             case 'about':
                                 return (
                                     <div className='footer__block' key={block.id}>
                                         {block.heading && <Heading title={block.heading} />}
-
                                         <div>
-                                            { block.content && <div className='max-w-[260px] font-inter text-black/50 font-normal text-base xl:text-lg leading-10 mb-7'>{ block.content }</div>}
+                                            { block.content && <div className='max-w-[260px] font-inter text-black/50 font-normal text-sm xl:text-base leading-10 mb-7'>{ block.content }</div>}
                                             { block.logo && <div><Image src={block.logo} alt={'Logo'} className='max-w-[76px]'/></div>}
                                         </div>
                                     </div>
@@ -34,7 +34,7 @@ const Footer = () => {
                                     <div className='footer__block' key={block.id}>
                                         {/* Render Linklist block */}
                                         {block.heading && <Heading title={block.heading} />}
-                                        <ul className='text-base xl:text-lg leading-8 space-y-3 lg:space-y-6 font-inter font-normal text-black/50'>
+                                        <ul className='text-sm xl:text-base leading-8 space-y-3 lg:space-y-6 font-inter font-normal text-black/50'>
                                             {block.list.map((link, index) => (
                                                 <li key={index}>
                                                     <Link href={link.slug} className=''>{link.name}</Link>
@@ -67,14 +67,14 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="py-[15px]">
+            <div className="py-[30px]">
                 <div className="container-fluid">
-                    <div className="flex items-center justify-between">
-                        <div className='font-inter font-normal text-base'>TAKs verden © Copyright 2024</div>
-                        <div>
+                    <div className="flex gap-y-3 flex-col md:flex-row items-center justify-between">
+                        <div className='md:order-1'>
                             <Image src={Logo} alt='logo' className='max-w-[33px]' />
                         </div>
-                        <ul className='flex items-center gap-[15px]'>
+                        <div className='md:order-2 font-inter font-normal text-base'>TAKs verden © Copyright 2024</div>
+                        <ul className='flex flex-wrap items-center gap-[15px]'>
                             <li><Link href={'#'}>Privacy Policy</Link></li>
                             <li><span className="w-[1px] h-[20px] bg-black block"></span></li>
                             <li><Link href={'#'}>Terms of Service</Link></li>
