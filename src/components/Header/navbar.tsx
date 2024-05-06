@@ -24,23 +24,12 @@ interface SubmenuItem {
 
 interface CountryGroup {
   id: number;
-  name: string;
+  name?: string;
   list: SubmenuItem[];
 }
 
-interface SubmenuCountry {
-  type: 'country';
-  group: CountryGroup[];
-}
-
-interface MenuItem {
-  id: number;
-  slug: string;
-  label: string;
-  submenu?: SubmenuCountry;
-}
-
 const Navbar = () => {
+
   return (
     <ul className="header__navbar flex items-center gap-x-[40px]">
       {menus && menus.map(menuItem => (
@@ -48,13 +37,13 @@ const Navbar = () => {
           {menuItem.submenu ? (
             <div className="has-submenu relative">
               <Link href={menuItem.slug} className="text-white font-inter font-light py-4 text-[18px]">{menuItem.label}</Link>
-              <div className={`submenu shadow-lg absolute rounded-lg py-4 px-6 top-[calc(100%+2rem)] ${menuItem.submenu?.type === 'country' ? ' -start-14 w-[590px] bg-white ' : ' w-[280px] start-1/2 -translate-x-1/2 bg-dark'}`}>
+              <div className={`submenu-list shadow-lg absolute rounded-lg py-4 px-6 top-[calc(100%+2rem)] bg-white before:w-0 before:h-0 before:border-l-[10px] before:border-l-transparent before:border-r-[10px] before:border-r-transparent before:border-b-[10px] before:border-b-white before:-top-[10px] before:absolute ${menuItem.submenu?.type === 'country' ? ' -start-14 w-[590px] before:start-[6rem]' : ' w-[280px] start-1/2 -translate-x-1/2 before:start-1/2 before:-translate-x-1/2'}`}>
                 { menuItem.submenu?.type === 'country' ? (
                   <div>
                     <CountryListDropdown list={menuItem.submenu.group}/>
                   </div>
                 ) : (
-                  <div>List</div>
+                  <div><SubMenuListDropdown list={menuItem.submenu.list}/></div>
                 )}
               </div>
             </div>
@@ -95,81 +84,13 @@ const CountryListDropdown = ({ list }: { list: CountryGroup[] }) => {
   )
 }
 
-
-// "use client"
-
-// import * as React from "react"
-// import Link from "next/link"
-
-// import { cn } from "@/lib/utils"
-// import { ChevronDown } from 'lucide-react';
-// import {
-//   Accordion,
-//   AccordionContent,
-//   AccordionItem,
-//   AccordionTrigger,
-// } from "@/components/ui/accordion"
-
-// import { menus } from "./data";
-
-// const Navbar = () => {
-//   return (
-//     <ul className="header__navbar flex items-center gap-x-[40px]">
-//       {
-//         menus && menus.map(menuItem =>(
-//           <li key={menuItem.id}>
-//             {menuItem.submenu ? 
-//             <div className="has-submenu relative">
-//               <Link href={menuItem.slug} className="text-white font-inter font-light">{menuItem.label}</Link>
-//               <div className="submenu absolute bg-white w-[590px] rounded-lg py-4 px-6 start-0 top-[calc(100%+2rem)]">
-                
-//                 {
-//                   menuItem.submenu?.type === 'country' ?
-//                   <div>
-//                     <CountryListDropdown list={menuItem.submenu?.group}/>
-//                   </div>
-//                   :
-//                   <div>List</div>
-//                 }
-//               </div>
-//             </div>
-//             :
-//             <Link href={menuItem.slug} className="text-white font-inter font-light">{menuItem.label}</Link>
-//           }
-//           </li>
-//         ))
-//       }
-//     </ul>
-//   )
-// }
-// export default Navbar;
-
-
-// const CountryListDropdown = ({ list }) =>{
-
-//   return (
-//     <Accordion type="single" collapsible className="w-full">
-//       {list.map(group =>(
-//       <AccordionItem value={`item-${group.id}`}>
-//         <AccordionTrigger>{group.name}</AccordionTrigger>
-//         <AccordionContent>
-//           Yes. It adheres to the WAI-ARIA design pattern.
-//         </AccordionContent>
-//       </AccordionItem>
-//       ))}
-//       <AccordionItem value="item-2">
-//         <AccordionTrigger>Is it styled?</AccordionTrigger>
-//         <AccordionContent>
-//           Yes. It comes with default styles that matches the other
-//           components&apos; aesthetic.
-//         </AccordionContent>
-//       </AccordionItem>
-//       <AccordionItem value="item-3">
-//         <AccordionTrigger>Is it animated?</AccordionTrigger>
-//         <AccordionContent>
-//           Yes. It's animated by default, but you can disable it if you prefer.
-//         </AccordionContent>
-//       </AccordionItem>
-//     </Accordion>
-//   )
-// }
+const SubMenuListDropdown = ({ list }: { list: SubmenuItem[] }) => {
+  return (
+    <ul className="flex flex-col">
+      { list && list.map((menuItem, index) => (
+        <li key={index} 
+        className={`${index === list.length - 1 ? "" : "border-b border-[#3F3D56]/20"}`}><Link className="py-2 block text-[24px] font-normal font-inter text-[#3F3D56]" href={menuItem.slug ?? '#'}>{ menuItem.label }</Link></li>
+      ))}
+    </ul>
+  )
+}

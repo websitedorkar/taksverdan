@@ -51,21 +51,25 @@ const Search = () => {
       }, []);
 
   return (
-    <div className='bg-white text-dark p-[6px] rounded-full mb-3'>
-        <div className="grid grid-cols-[1fr_1px_1fr_60px] items-center">
-            <div className='ps-6'>
+    <div className='mb-3'>
+        <div className="flex items-stretch flex-col gap-y-6 md:flex-row">
+            
+            {/* Location */}
+            <div className='bg-white text-dark ps-8 p-[7px] flex flex-col min-h-[58px] justify-center w-full rounded-full md:rounded-r-none'>
               <label className='block text-[16px] font-roboto text-dark' htmlFor="form-label--location">From</label>
               <LocationSearch />
             </div>
-            <div className='w-[1px] h-[80%] bg-black/20'></div>
-            <div className='ps-6'>
-                <label className='block text-[16px] font-roboto text-dark' htmlFor="form-label--tour">Tour</label>
-                <TourSearch />
+            {/* Tour */}
+            <div className="bg-white text-dark p-[7px] w-full min-h-[58px] flex items-center gap-x-3 rounded-full md:rounded-l-none relative before:content-[''] before:w-[1px] before:h-[60%] before:bg-black/20 before:absolute before:top-1/2 before:-translate-y-1/2 before:start-0">
+              <div className='ps-6'>
+                  <label className='block text-[16px] font-roboto text-dark' htmlFor="form-label--tour">Tour</label>
+                  <TourSearch />
+                </div>
+              <div className='inline-flex items-center ms-auto'>
+                  <Button variant={'secondary'} size={'default'} className='p-0 h-auto'>
+                      <Image src={Search_SVG} alt='Search Now' className='w-[51px] h-[51px] md:w-[58px] md:h-[58px]'/>
+                  </Button>
               </div>
-            <div className='inline-flex items-center'>
-                <Button variant={'secondary'} size={'default'} className='p-0 h-auto'>
-                    <Image src={Search_SVG} alt='Search Now' className='w-[58px] h-[58px]'/>
-                </Button>
             </div>
         </div>
     </div>

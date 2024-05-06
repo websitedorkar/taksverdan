@@ -21,16 +21,16 @@ import { Divide } from 'lucide-react';
 
 const Testimonials = () => {
   return (
-    <section className='bg-cover bg-[top_center] py-[100px]'>
+    <section className='bg-cover bg-[top_center] py-[50px] lg:py-[100px]'>
 
-        <div className="container">
+        <div className="container-fluid">
             {/* Section Title */}
             <div className="flex items-center justify-between mb-5">
                 <h2 className="text-2xl font-semibold leading-7 font-poppins">What People Say About</h2>
                 <div className='inline-flex items-center gap-[25px]'>
                     <Button variant={'outline'} className='h-[42px] border-dark' >Browse All</Button>                
                     
-                    <div className="flex items-center gap-[8px]">
+                    <div className="hidden md:flex items-center gap-[8px]">
                         {/* Arrow Left */}
                         <span className="testimonials-carousel--prev inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer">
                             <Image src={ArrowLeft} alt='arrow-left' />

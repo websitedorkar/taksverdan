@@ -13,14 +13,13 @@ interface SubmenuCountry {
   name: string;
   group: {
     id: number;
-    name: string;
+    name?: string;
     list: SubmenuItem[];
   }[];
 }
 
 interface SubmenuDropdown {
   type: 'dropdown';
-  name: string;
   list: SubmenuItem[];
 }
 
@@ -121,7 +120,6 @@ const menus: MenusJSON[] = [
     label: 'Inspiration',
     submenu: {
       type: 'dropdown',
-      name: 'Dropdown Menu',
       list: [
         {
           id: 1,
