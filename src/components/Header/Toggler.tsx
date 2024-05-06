@@ -224,9 +224,11 @@ const CountryListDropdown = ({ list }: { list: CountryGroup[] }) => {
           <AccordionContent>
             <ul className="grid grid-cols-[repeat(2,minmax(100px,1fr))] gap-3">
               {group.list.map(item => (
-                <li key={item.id} className="inline-flex items-center gap-x-2">
-                  { item.thumb && <div><Image className="w-[35px] h-[35px] rounded-md object-cover object-center" src={item.thumb} alt={item.label}/></div> }
-                  <div className="text-sm font-poppins font-normal">{item.label}</div>
+                <li key={item.id}>
+                  <Link href={item.slug ?? ''} className="inline-flex items-center gap-x-2">
+                    { item.thumb && <div><Image className="w-[35px] h-[35px] rounded-md object-cover object-center" src={item.thumb} alt={item.label}/></div> }
+                    <div className="text-sm font-poppins font-normal">{item.label}</div>
+                  </Link>
                 </li>
               ))}
             </ul>

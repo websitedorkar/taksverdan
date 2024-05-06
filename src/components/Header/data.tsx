@@ -46,18 +46,21 @@ const menus: MenusJSON[] = [
             {
               id: 1,
               value: "nepal",
+              slug: "nepal",
               label: "Nepal",
               thumb: Flag_1,
             },
             {
               id: 2,
               value: "india",
+              slug: "india",
               label: "India",
               thumb: Flag_1,
             },
             {
               id: 3,
               value: "thailand",
+              slug: "thailand",
               label: "Thailand",
               thumb: Flag_1,
             },
@@ -70,12 +73,14 @@ const menus: MenusJSON[] = [
             {
               id: 1,
               value: "nepal",
+              slug: "nepal",
               label: "Nepal",
               thumb: Flag_1,
             },
             {
               id: 2,
               value: "india",
+              slug: "india",
               label: "India",
               thumb: Flag_1,
             },
@@ -94,6 +99,7 @@ const menus: MenusJSON[] = [
             {
               id: 1,
               value: "nepal",
+              slug: "nepal",
               label: "Nepal",
               thumb: Flag_1,
             },
@@ -101,11 +107,13 @@ const menus: MenusJSON[] = [
               id: 2,
               value: "india",
               label: "India",
+              slug: "India",
               thumb: Flag_1,
             },
             {
               id: 3,
               value: "thailand",
+              slug: "thailand",
               label: "Thailand",
               thumb: Flag_1,
             },
