@@ -67,7 +67,7 @@ const CountryListDropdown = ({ list }: { list: CountryGroup[] }) => {
           value={`item-${group.id}`}
           className={index === list.length - 1 ? "border-b-0" : ""}
         >
-          <AccordionTrigger className="text-[22px] font-normal text-[#3F3D56] font-inter hover:no-underline">{group.name}</AccordionTrigger>
+          <AccordionTrigger className="text-base font-normal text-[#3F3D56] font-inter hover:no-underline">{group.name}</AccordionTrigger>
           <AccordionContent>
             <ul className="grid grid-cols-[repeat(4,minmax(100px,1fr))] gap-3">
               {group.list.map(item => (
@@ -89,7 +89,7 @@ const SubMenuListDropdown = ({ list }: { list: SubmenuItem[] }) => {
     <ul className="flex flex-col">
       { list && list.map((menuItem, index) => (
         <li key={index} 
-        className={`${index === list.length - 1 ? "" : "border-b border-[#3F3D56]/20"}`}><Link className="py-2 block text-[24px] font-normal font-inter text-[#3F3D56]" href={menuItem.slug ?? '#'}>{ menuItem.label }</Link></li>
+        className={`${index === list.length - 1 ? "" : "border-b border-[#3F3D56]/20"}`}><Link className="py-3 block text-base font-normal font-inter text-[#3F3D56]" href={menuItem.slug ?? '#'}>{ menuItem.label }</Link></li>
       ))}
     </ul>
   )

@@ -9,7 +9,7 @@ const MultiColumn = () => {
         <div className="container-fluid">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {columns && columns.map((column => (
-                    <div key={column.id} className="grid__item xl:min-h-[65vh] flex flex-col justify-between overflow-hidden relative z-[1] before:content-[''] before:w-full before:h-full before:absolute before:bg-black/40 before:z-[-1] before:start-0 before:top-0 bg-cover bg-center bg-dark text-white rounded-2xl py-[50px] px-[15px] lg:px-[35px]" style={{ backgroundImage: `url(${column.thumbnail.src ?? ''})` }}>
+                    <div key={column.id} className="grid__item xl:min-h-[510px] flex flex-col justify-between overflow-hidden relative z-[1] before:content-[''] before:w-full before:h-full before:absolute before:bg-black/40 before:z-[-1] before:start-0 before:top-0 bg-cover bg-center bg-dark text-white rounded-2xl py-[50px] px-[15px] lg:px-[35px]" style={{ backgroundImage: `url(${column.thumbnail.src ?? ''})` }}>
                         <div>
                             { column.logo && <Image src={column.logo} alt='logo' className='max-w-[65px] mb-6'/>}
                         </div>

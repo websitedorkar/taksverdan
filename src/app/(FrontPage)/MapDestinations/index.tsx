@@ -5,6 +5,7 @@ import LocationSVG from './img/location.svg';
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import Link from 'next/link';
 
 const MapDestinations = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -79,11 +80,13 @@ const MapDestinations = () => {
                                 backgroundImage: `url(${Banner.src})`
                             }}
                         >
-                            <h4 className="font-roboto text-base mb-1">Lakehouse Pier</h4>
-                            <div className='flex items-center gap-2 text-sm'>
-                                <Image src={LocationSVG} alt={'India, Bali'} />
-                                India, Bali
-                            </div>
+                            <Link href={'#'}>
+                                <h4 className="font-roboto text-base mb-1">Lakehouse Pier</h4>
+                                <div className='flex items-center gap-2 text-sm'>
+                                    <Image src={LocationSVG} alt={'India, Bali'} />
+                                    India, Bali
+                                </div>
+                            </Link>
                         </motion.div>
                     )}
                 </div>
