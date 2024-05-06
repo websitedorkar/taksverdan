@@ -83,7 +83,7 @@ const HeroCarousel = () => {
                 <div id='containerForBullets' className='swiper-pagination top-[unset] !bottom-[unset]'></div>
                 <div className="container">
                     <div className="font-inter font-light text-center text-[14px] lg:text-base line-2">
-                        <strong>India:</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when. <Link href={'#'} className='underline underline-offset-2'>Read More</Link>
+                        <strong>India:</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy when. <Link href={'#'} className='underline underline-offset-2'>Read More</Link>
                     </div>
                 </div>
             </div>
