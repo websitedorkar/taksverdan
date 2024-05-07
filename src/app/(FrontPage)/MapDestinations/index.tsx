@@ -139,6 +139,7 @@ const MapDestinations = () => {
 
                             return (
                                 <motion.div
+                                    key={i}
                                     ref={tooltipRef}
                                     initial={{ opacity: 0, left: `calc(50% - 75px)`, bottom: `calc(50% - 75px)` }}
                                     animate={{ opacity: 1, left: `${position.left}px`, bottom: `calc(100% - ${position.top}px)` }}
