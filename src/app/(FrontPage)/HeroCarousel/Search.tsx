@@ -72,7 +72,7 @@ const Search = () => {
                     </div>
                 </div>
                 <div className='inline-flex items-center bg-white rounded-full md:rounded-l-none'>
-                    <Button variant={'secondary'} size={'default'} className='p-0 h-auto'>
+                    <Button variant={'secondary'} size={'default'} className='p-0 h-auto !bg-transparent'>
                         <Image src={Search_SVG} alt='Search Now' className='w-[51px] h-[51px] md:w-[58px] md:h-[58px]'/>
                     </Button>
                 </div>

@@ -27,13 +27,13 @@ const HeroCarousel = () => {
             
             <div className="absolute top-1/2 start-0 end-0 z-[20] w-full items-center gap-[8px] justify-between px-4 hidden md:flex">
                 {/* Arrow Left */}
-                <span className="hero-carousel--prev inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer">
-                    <Image src={ArrowLeft} alt='arrow-left' />
+                <span className="hero-carousel--prev inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer group/arrow-left hover:bg-dark rounded-full transition-all duration-150">
+                    <Image src={ArrowLeft} alt='arrow-left' className='group-hover/arrow-left:invert'/>
                 </span>
-
+                
                 {/* Arrow Right */}
-                <span className="hero-carousel--next inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer">
-                    <Image src={ArrowRight} alt='arrow-right' />
+                <span className="hero-carousel--next inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer group/arrow-right hover:bg-dark rounded-full transition-all duration-150">
+                    <Image src={ArrowRight} alt='arrow-right' className='group-hover/arrow-right:invert' />
                 </span>
             </div>
 

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import Navbar from './navbar';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import Toggler from './Toggler';
+import Link from 'next/link';
 
 const Header = () => {
     // Check if window is defined before accessing its properties
@@ -28,7 +29,7 @@ const Header = () => {
             }
             <div className="header__action">
             {isDesktop ?
-                <Button variant={'secondary'} size={'sm'}>MAP</Button>
+                <Link href={'#map-destination-section'}><Button variant={'secondary'} size={'sm'}>MAP</Button></Link>
                 :
                 <Toggler />
             }

@@ -32,13 +32,13 @@ const Testimonials = () => {
                     
                     <div className="hidden md:flex items-center gap-[8px]">
                         {/* Arrow Left */}
-                        <span className="testimonials-carousel--prev inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer">
-                            <Image src={ArrowLeft} alt='arrow-left' />
+                        <span className="testimonials-carousel--prev inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer group/arrow-left hover:bg-dark rounded-full transition-all duration-150">
+                            <Image src={ArrowLeft} alt='arrow-left' className='group-hover/arrow-left:invert' />
                         </span>
 
                         {/* Arrow Right */}
-                        <span className="testimonials-carousel--next inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer">
-                            <Image src={ArrowRight} alt='arrow-right' />
+                        <span className="testimonials-carousel--next inline-flex items-center justify-center w-[40px] min-w-[40px] h-[40px] cursor-pointer group/arrow-right hover:bg-dark rounded-full transition-all duration-150 ">
+                            <Image src={ArrowRight} alt='arrow-right' className='group-hover/arrow-right:invert' />
                         </span>
                     </div>
                 </div>
