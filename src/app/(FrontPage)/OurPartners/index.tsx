@@ -21,7 +21,7 @@ import { slides } from './data';
 
 const OurPartners = () => {
   return (
-    <section className='bg-cover bg-[top_center] pt-[50px] pb-[50px] lg:pb-[100px]'>
+    <section className='bg-cover bg-[top_center] py-[50px]'>
         <div className="container-fluid">
             {/* Section Title */}
             <div className="flex items-center justify-between mb-5">

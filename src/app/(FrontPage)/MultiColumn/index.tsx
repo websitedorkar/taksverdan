@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const MultiColumn = () => {
   return (
-    <section className='py-[100px]'>
+    <section className='pt-[100px] py-[50px]'>
         <div className="container-fluid">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {columns && columns.map((column => (

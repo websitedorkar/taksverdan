@@ -14,7 +14,7 @@ const MapDestinations = () => {
     const [isPopup, setIsPopup] = useState<number | null >(3);
     const [isOpen, setIsOpen] = useState<string | null >('desktop-path--3');
     const tooltipRef = useRef<HTMLDivElement>(null);
-    const [position, setPosition] = useState({ left: 0, top: 0 });
+    const [position, setPosition] = useState({ left: 619.78, top: 348.14 });
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     // useEffect(() => {
@@ -57,7 +57,7 @@ const MapDestinations = () => {
     
 
   return (
-    <section className='py-[50px] lg:py-[100px]' id="map-destination-section">
+    <section className='py-[50px]' id="map-destination-section">
         <div className="container-fluid">
             {/* section title */}
                 <div className="mb-5">
@@ -141,7 +141,7 @@ const MapDestinations = () => {
                                 <motion.div
                                     key={i}
                                     ref={tooltipRef}
-                                    initial={{ opacity: 0, left: `calc(50% - 75px)`, bottom: `calc(50% - 75px)` }}
+                                    initial={{ opacity: 0, left: `${position.left}px`, bottom: `calc(100% - ${position.top}px)` }}
                                     animate={{ opacity: 1, left: `${position.left}px`, bottom: `calc(100% - ${position.top}px)` }}
                                     transition={{ duration: 0.2, ease: "easeInOut" }} // Adjusted duration and added ease property
                                     className="absolute shadow-md overflow-hidden text-white p-4 rounded-xl -translate-x-1/2 bg-cover bg-center min-w-[150px] min-h-[150px] flex flex-col justify-end before:content-[''] before:bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000000_100%)] before:absolute before:bottom-0 before:start-0 before:w-full before:h-1/2 before:z-[-1]"

@@ -21,7 +21,7 @@ import { Divide } from 'lucide-react';
 
 const Testimonials = () => {
   return (
-    <section className='bg-cover bg-[top_center] py-[50px] lg:py-[100px]'>
+    <section className='bg-cover bg-[top_center] py-[50px]'>
 
         <div className="container-fluid">
             {/* Section Title */}

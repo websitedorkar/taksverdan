@@ -21,7 +21,7 @@ import { slides } from './data';
 
 const TravelBlog = () => {
   return (
-    <section className='bg-cover bg-[top_center] py-[50px] lg:py-[100px]' style={{ backgroundImage: `url( ${BG.src} )`}}>
+    <section className='bg-cover bg-[top_center] py-[50px]' style={{ backgroundImage: `url( ${BG.src} )`}}>
 
         <div className="container-fluid">
             {/* Section Title */}
