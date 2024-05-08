@@ -54,9 +54,8 @@ const MapDestinations = () => {
         setIsOpen(target);
         setIsPopup(index);
     };
-    
 
-  return (
+    return (
     <section className='py-[50px]' id="map-destination-section">
         <div className="container-fluid">
             {/* section title */}
