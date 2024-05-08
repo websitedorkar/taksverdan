@@ -4,6 +4,7 @@ import { columns  } from './data';
 import { Button } from '@/components/ui/button';
 
 const MultiColumn = () => {
+    
   return (
     <section className='pt-[50px]'>
         <div className="container-fluid">
