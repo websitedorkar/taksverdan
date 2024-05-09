@@ -62,8 +62,8 @@ const ExploreTours = () => {
                                 <div className="h-full flex flex-col border border-dark border-opacity-10 rounded-lg p-3 lg:p-6">
                                     <h2 className="text-dark text-xl font-poppins font-medium mb-3">About the Tour</h2>
                                     <div className="font-inter font-normal text-lg leading-8 text-desc mb-6">
-                                        <p>Colorful prayer flags fluttering in the wind, experience bustling folk life in Nepal's capital Kathmandu, enjoy the view of the snow-capped Himalayan mountains from temples, jungles, boats and airplane windows. </p>
-                                        <p>Experience dzongs, temples and unique nature in the unique mountain country of Bhutan with the Tiger's Nest monastery as the ultimate highlight! Visit the lowlands of Nepal in search of the Bengal tiger and visit the trekking town of Pokhara where we have majestic views of the Annapurna Mountains. There are many highlights on this exciting trip to Nepal and Bhutan!</p>
+                                        <p>Colorful prayer flags fluttering in the wind, experience bustling folk life in Nepal&apos;s capital Kathmandu, enjoy the view of the snow-capped Himalayan mountains from temples, jungles, boats and airplane windows. </p>
+                                        <p>Experience dzongs, temples and unique nature in the unique mountain country of Bhutan with the Tiger&apos;s Nest monastery as the ultimate highlight! Visit the lowlands of Nepal in search of the Bengal tiger and visit the trekking town of Pokhara where we have majestic views of the Annapurna Mountains. There are many highlights on this exciting trip to Nepal and Bhutan!</p>
                                     </div>
                                     
                                     <div className='text-xl font-poppins font-medium flex items-center gap-x-2 mt-auto'>
