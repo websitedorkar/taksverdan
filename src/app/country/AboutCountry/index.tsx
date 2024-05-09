@@ -92,8 +92,8 @@ const AboutCountry = () => {
                         </div>
                         <hr className="my-3" />
                         <div className="font-roboto font-light text-lg leading-8 text-desc">
-                            <p>Colorful prayer flags fluttering in the wind, experience bustling folk life in Nepal's capital Kathmandu, enjoy the view of the snow-capped Himalayan mountains from temples, jungles, boats and airplane windows. </p>
-                            <p>Experience dzongs, temples and unique nature in the unique mountain country of Bhutan with the Tiger's Nest monastery as the ultimate highlight! </p>
+                            <p>Colorful prayer flags fluttering in the wind, experience bustling folk life in Nepal&apos;s capital Kathmandu, enjoy the view of the snow-capped Himalayan mountains from temples, jungles, boats and airplane windows. </p>
+                            <p>Experience dzongs, temples and unique nature in the unique mountain country of Bhutan with the Tiger&apos;s Nest monastery as the ultimate highlight! </p>
                             <p>Visit the lowlands of Nepal in search of the Bengal tiger and visit the trekking town of Pokhara where we have majestic views of the Annapurna Mountains. </p>
                         </div>
                     </div>
