@@ -47,7 +47,7 @@ const ExploreTours = () => {
                     <div className="grid grid-cols-12 gap-6">
                             {tours.slice(0, 1).map((tour, index)=> {
                                 return (
-                                    <div key={tour.id ?? index} className="grid__item h-full col-span-12 lg:col-span-5 xl:col-span-4">
+                                    <div key={tour.id ?? index} className="grid__item h-full col-span-12 lg:col-span-5 xl:col-span-3">
                                         <div  className='z-[1] bg-cover bg-center text-white h-full min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ tour.thumbnail.src ?? '' })` }}>
                                             { tour.title && <h3 className="font-roboto text-lg lg:text-xl mb-1">{ tour.title }</h3>}
                                             { tour.location && <div className='flex items-center gap-2 text-[13px] lg:text-base'>
@@ -58,7 +58,7 @@ const ExploreTours = () => {
                                     </div>
                                 )
                             })}                  
-                            <div className="grid__item col-span-12 lg:col-span-7 xl:col-span-8 h-full">
+                            <div className="grid__item col-span-12 lg:col-span-7 xl:col-span-9 h-full">
                                 <div className="h-full flex flex-col border border-dark border-opacity-10 rounded-lg p-3 lg:p-6">
                                     <h2 className="text-dark text-xl font-poppins font-medium mb-3">About the Tour</h2>
                                     <div className="font-inter font-normal text-lg leading-8 text-desc mb-6">
