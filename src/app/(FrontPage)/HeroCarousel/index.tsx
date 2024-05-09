@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import BannerBG from './img/hero-bg.jpg';
 import Link from 'next/link';
 import ArrowLeft from '@/images/arrow-left-light.svg';
 import ArrowRight from '@/images/arrow-right-light.svg';

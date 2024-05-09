@@ -60,3 +60,8 @@
 svg path[data-target] {
   cursor: pointer;
 }
+
+
+.text-desc p:not(:last-child) {
+  @apply mb-3
+}

@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-import { slides } from './data';
+import { tours } from '@/data/tours';
 
 const LatestTours = () => {
   return (
@@ -45,7 +45,7 @@ const LatestTours = () => {
                 </div>
             </div>
             <div className="relative">
-                {slides &&<Swiper
+                {tours &&<Swiper
                     modules={[Grid, Pagination, Navigation, ]}
                     spaceBetween={15}
                     slidesPerView={4}
@@ -88,15 +88,14 @@ const LatestTours = () => {
                         },
                     }}
                 >
-                    {slides.map(slide => {
+                    {tours.slice(0, 6).map((tour, index) => {
                         return (
-                            <SwiperSlide key={slide.id}>
-                                
-                                <div  className='z-[1] bg-cover bg-center text-white min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ slide.thumbnail.src ?? '' })` }}>
-                                    { slide.title && <h3 className="font-roboto text-lg lg:text-xl mb-1">{ slide.title }</h3>}
-                                    { slide.location && <div className='flex items-center gap-2 text-[13px] lg:text-base'>
-                                    <Image src={LocationSVG} alt={slide.location} />
-                                    { slide.location }
+                            <SwiperSlide key={tour.id ?? index}>
+                                <div  className='z-[1] bg-cover bg-center text-white min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ tour.thumbnail.src ?? '' })` }}>
+                                    { tour.title && <h3 className="font-roboto text-lg lg:text-xl mb-1">{ tour.title }</h3>}
+                                    { tour.location && <div className='flex items-center gap-2 text-[13px] lg:text-base'>
+                                    <Image src={LocationSVG} alt={tour.location} />
+                                    { tour.location }
                                     </div>}
                                 </div>
                             </SwiperSlide>
