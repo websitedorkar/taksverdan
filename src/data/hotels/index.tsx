@@ -9,7 +9,7 @@ import Banner__8 from './img/banner-8.png';
 
 interface ItemJSON {
   id: number;
-  thumbnail?: any;
+  thumb?: any;
   title: string;
   ratings: string;
   total_ratings: string;
@@ -19,84 +19,84 @@ interface ItemJSON {
 const hotels: ItemJSON[] = [
   {
     id: 1,
-    thumbnail: Banner__1,
+    thumb: Banner__1,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 2,
-    thumbnail: Banner__2,
+    thumb: Banner__2,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 3,
-    thumbnail: Banner__3,
+    thumb: Banner__3,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 4,
-    thumbnail: Banner__4,
+    thumb: Banner__4,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 5,
-    thumbnail: Banner__5,
+    thumb: Banner__5,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 6,
-    thumbnail: Banner__6,
+    thumb: Banner__6,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 7,
-    thumbnail: Banner__7,
+    thumb: Banner__7,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 8,
-    thumbnail: Banner__8,
+    thumb: Banner__8,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 9,
-    thumbnail: Banner__1,
+    thumb: Banner__1,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 10,
-    thumbnail: Banner__2,
+    thumb: Banner__2,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 11,
-    thumbnail: Banner__3,
+    thumb: Banner__3,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',
   },
   {
     id: 12,
-    thumbnail: Banner__4,
+    thumb: Banner__4,
     title: "Hotel Name",
     ratings: '5,0',
     total_ratings: '1k+',

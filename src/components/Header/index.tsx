@@ -10,7 +10,6 @@ import Toggler from './Toggler';
 import Link from 'next/link';
 
 const Header = () => {
-
   return (
     <header className='absolute top-0 start-0 end-0 z-20 px-[35px] lg:px-[60px] py-[40px]'>
         <div className="flex gap-4 items-center justify-between">

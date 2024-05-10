@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Nepal from './img/nepal.png';
+import BgShape from './img/bg-shape.svg';
 import Image from 'next/image';
 import ArrowLeft from '@/images/arrow-left-light.svg';
 import ArrowRight from '@/images/arrow-right-light.svg';
@@ -19,7 +20,7 @@ import Link from 'next/link';
 
 const AboutCountry = () => {
   return (
-    <section className='py-[50px]'>
+    <section className='py-[50px] relative z-[1] before:bg-[bottom_center] before:bg-cover before:w-full before:h-full before:max-h-screen before:absolute before:bg-white before:top-0 before:z-[-1] before:bg-hero-pattern'>
         <div className="container-fluid">
 
             {/* Section Title */}
@@ -82,7 +83,7 @@ const AboutCountry = () => {
                         </div>
                 </div>
                 <div className="grid__item col-span-12 lg:col-span-5 xl:col-span-4 h-full">
-                    <div className="h-full border border-dark border-opacity-10 rounded-lg p-3 lg:p-6">
+                    <div className="h-full border border-dark border-opacity-10 rounded-lg p-3 lg:p-6 bg-white">
                         <div className="flex justify-between items-center gap-x-3">
                             <h2 className="text-dark text-xl font-poppins font-medium">About the Country</h2>
                             <Link href={'#'} className='text-lg font-poppins font-normal flex items-center gap-x-2'>

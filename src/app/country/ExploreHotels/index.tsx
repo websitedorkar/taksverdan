@@ -1,15 +1,8 @@
+"use client";
+
 import React from 'react';
 import StarSVG from './img/star.svg';
 import Image from 'next/image';
-import {
-        Pagination,
-        PaginationContent,
-        PaginationEllipsis,
-        PaginationItem,
-        PaginationLink,
-        PaginationNext,
-        PaginationPrevious,
-    } from "@/components/ui/pagination"
 import { hotels } from '@/data/hotels';
 
 import {
@@ -17,10 +10,20 @@ import {
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
-  } from "@/components/ui/select"
+} from "@/components/ui/select"
+
+// Import Swiper React components
+import { Grid, Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import DefaultPagination from '@/components/DefaultPagination';
+import HotelCard from '@/components/Cards/HotelCard';
 
 const ExploreHotels = () => {
     return (
@@ -53,51 +56,81 @@ const ExploreHotels = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-6">
-                {hotels.slice(0, 8).map((hotel, index)=> {
-                    return (
-                        <div key={hotel.id ?? index} className="grid__item">
-                            <div  className='z-[1] bg-cover bg-center text-white min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ hotel.thumbnail.src ?? '' })` }}>
-                                { hotel.title && <h3 className="font-roboto text-lg lg:text-xl mb-1">{ hotel.title }</h3>}
-                                { hotel.total_ratings && <div className='flex items-center gap-1 text-[13px] lg:text-sm'>
-                                <Image src={StarSVG} alt={`${hotel.ratings} ${hotel.total_ratings}`} />
-                                <span className="text-[#FCA800]">{hotel.ratings}</span>({ hotel.total_ratings })
-                                </div>}
+                {/* DESKTOP */}
+            <div className="hidden lg:block">
+                <div className="grid grid-cols-4 gap-6">
+                    {hotels.slice(0, 8).map((hotel, index)=> {
+                        return (
+                            <div key={hotel.id ?? index} className="grid__item">
+                                <HotelCard post={hotel} />
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
+                <div className="pt-[50px]">
+                    <DefaultPagination />
+                </div>
+            </div>
+    
+                {/* MOBILE */}
+                <div className="block lg:hidden">
+                {hotels &&<Swiper
+                    modules={[Grid, Pagination, Navigation, ]}
+                    spaceBetween={15}
+                    slidesPerView={4}
+                    grid={{
+                        rows: 1,
+                        fill: 'row',
+                    }}
+                    className='slide-equal-height default-pagination'
+                    // install Swiper modules
+                    navigation={{
+                        nextEl: ".latest-tours-carousel--next",
+                        prevEl: ".latest-tours-carousel--prev",
+                        disabledClass: "swiper-button-disabled !opacity-25 pointer-events-none"
+                    }}
+                    pagination={{ clickable: true }}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 2,
+                            grid:{
+                                rows: 2,
+                                fill: 'row',
+                            }
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            grid:{
+                                rows: 2,
+                                fill: 'row',
+                            }
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 15,
+                            pagination: false
+                        },
+                        1366: {
+                            slidesPerView: 4,
+                            spaceBetween: 25,
+                            pagination: false
+                        },
+                    }}
+                >
+                    {hotels.slice(0, 6).map((hotel, index) => {
+                        return (
+                            <SwiperSlide key={hotel.id ?? index}>
+                                <HotelCard post={hotel} />
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
+                }
             </div>
 
-            <div className="pt-[50px]">
-                <Pagination>
-                    <PaginationContent>
-                        <PaginationItem>
-                        <PaginationPrevious href="#" />
-                        </PaginationItem>
-                        <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem>
-                        <PaginationLink href="#" isActive>
-                            2
-                        </PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem>
-                        <PaginationLink href="#">3</PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem>
-                        <PaginationEllipsis />
-                        </PaginationItem>
-                        <PaginationItem>
-                        <PaginationNext href="#" />
-                        </PaginationItem>
-                    </PaginationContent>
-                    </Pagination>
-            </div>
         </div>
     </section>
     )
 }
 
-export default ExploreHotels
+export default ExploreHotels;

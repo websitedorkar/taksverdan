@@ -90,6 +90,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'hero-pattern': "url('/images/bg-dotted-pattern.svg')",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

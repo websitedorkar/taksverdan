@@ -10,9 +10,8 @@ import Toggler from './Toggler';
 import Link from 'next/link';
 
 const PrimaryHeader = () => {
-
   return (
-    <header className='py-[10px] border-b border-[#E5E5E5]'>
+    <header className='py-[10px] border-b border-[#E5E5E5] z-20 relative'>
         <div className="container-fluid">
             <div className="flex gap-4 items-center justify-between">
                 {/* LOGO */}
