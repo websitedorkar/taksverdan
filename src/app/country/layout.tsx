@@ -7,8 +7,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <div>
-        <PrimaryHeader />
+      <div> 
+        <PrimaryHeader btn_url="#section-map" btn_label="Map"/>
         <div className="overflow-hidden z-[2] relative">{children}</div>
         <Footer />
       </div>

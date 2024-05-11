@@ -1,6 +1,10 @@
     import Check from '@/images/check-circle.svg';
     import CheckCircle from './img/check-circle.svg';
-    import Banner from './img/banner-1.png';
+    import Banner__1 from './img/banner-1.png';
+    import Banner__2 from './img/banner-2.png';
+    import Banner__3 from './img/banner-3.jpg';
+    import Banner__4 from './img/banner-4.jpg';
+    
 
     interface ItemProps {
         id: number;
@@ -137,28 +141,81 @@ interface SlidesJSON {
 const slides: SlidesJSON[] = [
   {
     id: 1,
-    thumb: Banner,
+    thumb: Banner__1,
   },
   {
     id: 2,
-    thumb: Banner,
+    thumb: Banner__1,
   },
   {
     id: 3,
-    thumb: Banner,
+    thumb: Banner__1,
   },
   {
     id: 4,
-    thumb: Banner,
+    thumb: Banner__1,
   },
   {
     id: 5,
-    thumb: Banner,
+    thumb: Banner__1,
   },
   {
     id: 6,
-    thumb: Banner,
+    thumb: Banner__1,
   },
 ]
 
-export { itinerary, slides, includes, bookings};
+interface MapJSON {
+  id: number;
+  slug?: string;
+  thumbnail?: any;
+  title: string;
+  location: string;
+}
+
+const maps: MapJSON[] = [
+  {
+    id: 1,
+    slug: 'lake-house-pier',
+    thumbnail: Banner__1,
+    title: "Lakehouse Pier",
+    location: 'India, Bali',
+  },
+  {
+    id: 2,
+    thumbnail: Banner__2,
+    slug: 'lake-house-pier',
+    title: "Lakehouse Pier",
+    location: 'India, Bali',
+  },
+  {
+    id: 3,
+    thumbnail: Banner__3,
+    slug: 'lake-house-pier',
+    title: "Lakehouse Pier",
+    location: 'India, Bali',
+  },
+  {
+    id: 4,
+    thumbnail: Banner__4,
+    slug: 'lake-house-pier',
+    title: "Lakehouse Pier",
+    location: 'India, Bali',
+  },
+  {
+    id: 5,
+    thumbnail: Banner__1,
+    slug: 'lake-house-pier',
+    title: "Lakehouse Pier",
+    location: 'India, Bali',
+  },
+  {
+    id: 6,
+    thumbnail: Banner__2,
+    slug: 'lake-house-pier',
+    title: "Lakehouse Pier",
+    location: 'India, Bali',
+  },
+]
+
+export { itinerary, slides, includes, bookings, maps};
