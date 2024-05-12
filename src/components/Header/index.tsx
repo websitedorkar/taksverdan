@@ -62,9 +62,9 @@ const Header: React.FC<HeaderProps> = ({ btn_label, btn_url, isMap, bgTransparen
                         <span className="inline-flex">
                             {
                                 bgTransparent && !isSticky ?
-                                <Image src={LOGO_DESKTOP_LIGHT} alt='logo'  className='h-[56px] max-w-[50vw]'/>
+                                <Image src={LOGO_DESKTOP_LIGHT} alt='logo'  className='h-[56px] max-w-[35vw]'/>
                                 :
-                                <Image src={LOGO_DESKTOP_DARK} alt='logo'  className='h-[56px] max-w-[50vw]'/>
+                                <Image src={LOGO_DESKTOP_DARK} alt='logo'  className='h-[56px] max-w-[35vw]'/>
                             }
                         </span>
                     </Link>
