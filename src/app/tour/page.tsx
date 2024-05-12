@@ -55,7 +55,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Button } from '@/components/ui/button';
 import MapDestination from './MapDestination';
-import MapDestination2 from './MapDestination2';
 
 const Tour = () => {
   return (
@@ -126,7 +125,6 @@ const Tour = () => {
             </div>
             <div className='lg:pe-[100px] space-y-[50px]'>
               <MapDestination />
-              {/* <MapDestination2 /> */}
             </div>
 
             {/* Features */}
@@ -401,30 +399,28 @@ const Tour = () => {
               </li>
             </ul>
           </div>
-          <div className="col-span-1 lg:col-span-4">
-            <div className="sticky top-0 z-10">
-                <div className=" border border-dark border-opacity-10 rounded-lg p-3 lg:p-6 bg-white">
-                    <div className="flex justify-between items-center gap-x-3">
-                        <h2 className="text-dark text-xl font-poppins font-medium">Itinerary</h2>
-                        <Link href={'#'} className='text-lg font-poppins font-normal flex items-center gap-x-2'>
-                            <Image src={ShareSVG} alt="Share" />
-                            <span>Share</span>
-                        </Link>
-                    </div>
-                    <hr className="my-3" />
-                    <div className="">
-                        <ul className="space-y-3 font-roboto text-[18px] font-normal text-black">
-                          { itinerary.map(( item, index) => (
-                            <li key={item.id ?? index} className='flex items-center gap-2 border py-2 px-4 rounded-lg'>
-                              <span>
-                                <Image src={item.icon} alt={item.text} />
-                              </span>
-                              <span>{item.text}</span>
-                            </li>
-                          )) }
-                        </ul>
-                    </div>
-                </div>
+          <div className="col-span-1 lg:col-span-4 sticky top-[100px] z-10">
+              <div className=" border border-dark border-opacity-10 rounded-lg p-3 lg:p-6 bg-white">
+                  <div className="flex justify-between items-center gap-x-3">
+                      <h2 className="text-dark text-xl font-poppins font-medium">Itinerary</h2>
+                      <Link href={'#'} className='text-lg font-poppins font-normal flex items-center gap-x-2'>
+                          <Image src={ShareSVG} alt="Share" />
+                          <span>Share</span>
+                      </Link>
+                  </div>
+                  <hr className="my-3" />
+                  <div className="">
+                      <ul className="space-y-3 font-roboto text-[18px] font-normal text-black">
+                        { itinerary.map(( item, index) => (
+                          <li key={item.id ?? index} className='flex items-center gap-2 border py-2 px-4 rounded-lg'>
+                            <span>
+                              <Image src={item.icon} alt={item.text} />
+                            </span>
+                            <span>{item.text}</span>
+                          </li>
+                        )) }
+                      </ul>
+                  </div>
               </div>
           </div>
         </div>

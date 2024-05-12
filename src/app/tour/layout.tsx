@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
       <div>
         <PrimaryHeader btn_url="#section-price" btn_label="Price"/>
-        <div className="overflow-hidden z-[2] relative">{children}</div>
+        <div className="z-[2] relative">{children}</div>
         <Footer />
       </div>
   );

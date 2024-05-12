@@ -65,3 +65,63 @@ svg path[data-target] {
 .text-desc p:not(:last-child) {
   @apply mb-3
 }
+
+.header--sticky {
+  @apply !fixed top-0 inset-x-0 bg-white;
+  -webkit-animation-name: header_animation;
+  animation-name: header_animation;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-delay: false;
+  animation-delay: false;
+}
+
+@-webkit-keyframes header_animation {
+  0% {
+    -webkit-transform: translate3d(0, -70px, 0);
+    transform: translate3d(0, -70px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes header_animation {
+  0% {
+    -webkit-transform: translate3d(0, -70px, 0);
+    transform: translate3d(0, -70px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-wrapper-left {
+  width: 60%;
+  height: 200vh;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper-right {
+  width: 25%;
+  height: 25vh;
+  min-height: 200px;
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
+}

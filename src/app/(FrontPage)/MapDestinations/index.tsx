@@ -64,7 +64,6 @@ const MapDestinations = () => {
                 </div>
 
                 <div className="relative">
-                    
                     {isMobile ?
                     <svg width="347" className='w-full h-auto' height="283" viewBox="0 0 347 283" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                     <rect width="347" height="283" fill="url(#pattern0_2087_2)"/>

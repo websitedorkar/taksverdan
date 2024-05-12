@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
       <div> 
-        <PrimaryHeader btn_url="#section-map" btn_label="Map"/>
+        <PrimaryHeader btn_url="#section-map" btn_label="Map" isMap={true}/>
         <div className="overflow-hidden z-[2] relative">{children}</div>
         <Footer />
       </div>
