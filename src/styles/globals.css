@@ -106,6 +106,7 @@ svg path[data-target] {
   }
 }
 
+.itinerary-link:hover,
 .itinerary-link.active {
   @apply bg-black text-white
 }
@@ -114,6 +115,7 @@ svg path[data-target] {
   @apply text-black/20
 }
 
+.itinerary-link:hover svg,
 .itinerary-link.active svg {
   @apply text-white
 }

@@ -56,7 +56,7 @@ const MapDestinations = () => {
     };
 
     return (
-    <section className='py-[50px]' id="map-destination-section">
+    <section className='py-[50px] hidden lg:block'>
         <div className="container-fluid">
             {/* section title */}
                 <div className="mb-5">
