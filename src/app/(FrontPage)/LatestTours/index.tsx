@@ -3,7 +3,6 @@
 import { Button } from '@/components/ui/button'
 import React from 'react';
 import BG from '@/images/bg-art.svg';
-import LocationSVG from './img/location.svg';
 import ArrowLeft from '@/images/arrow-left.svg';
 import ArrowRight from '@/images/arrow-right.svg';
 import Image from 'next/image';
@@ -19,6 +18,7 @@ import 'swiper/css/pagination';
 
 
 import { tours } from '@/data/tours';
+import TourCard from '@/components/Cards/TourCard';
 
 const LatestTours = () => {
   return (
@@ -91,13 +91,7 @@ const LatestTours = () => {
                     {tours.slice(0, 6).map((tour, index) => {
                         return (
                             <SwiperSlide key={tour.id ?? index}>
-                                <div  className='z-[1] bg-cover bg-center text-white min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ tour.thumbnail.src ?? '' })` }}>
-                                    { tour.title && <h3 className="font-roboto text-lg lg:text-xl mb-1">{ tour.title }</h3>}
-                                    { tour.location && <div className='flex items-center gap-2 text-[13px] lg:text-base'>
-                                    <Image src={LocationSVG} alt={tour.location} />
-                                    { tour.location }
-                                    </div>}
-                                </div>
+                                <TourCard post={tour} />
                             </SwiperSlide>
                         )
                     })}

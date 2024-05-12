@@ -20,6 +20,7 @@ import 'swiper/css/pagination';
 
 
 import { slides } from './data';
+import Link from 'next/link';
 
 const ExploreContinents = () => {
   return (
@@ -97,13 +98,13 @@ const ExploreContinents = () => {
                         return (
                             <SwiperSlide key={slide.id}>
                                 
-                                <div  className='z-[1] bg-cover bg-center text-white min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ slide.thumbnail.src ?? '' })` }}>
+                                <Link href={'#'} className='z-[1] bg-cover bg-center text-white min-h-[192px] md:min-h-[340px] rounded-2xl p-5 flex flex-col justify-end relative before:content-[""] before:w-full before:h-[115px] before:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,#000000_100%)] before:opacity-80 before:absolute before:start-0 before:end-0 before:bottom-0 overflow-hidden before:z-[-1]' style={{ backgroundImage: `url(${ slide.thumbnail.src ?? '' })` }}>
                                     { slide.title && <h3 className="font-roboto text-xl mb-1">{ slide.title }</h3>}
                                     { slide.location && <div className='flex items-center gap-2 text-base'>
                                     <Image src={LocationSVG} alt={slide.location} />
                                     { slide.location }
                                     </div>}
-                                </div>
+                                </Link>
                             </SwiperSlide>
                         )
                     })}

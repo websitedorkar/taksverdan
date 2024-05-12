@@ -30,10 +30,10 @@ interface CountryGroup {
 }
 
 interface NavbarProps {
-  isSticky: boolean;
+  bgTransparent: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isSticky }) => {
+const Navbar: React.FC<NavbarProps> = ({ bgTransparent }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
 
@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ isSticky }) => {
               </div>
             </div>
           ) : (
-            <Link href={menuItem.slug} className={`font-inter font-normal text-base xl:text-[18px] relative z-[1] before:transition-all before:duration-200 before:w-[calc(100%+2rem)] before:h-[37px] before:absolute before:bg-black before:bg-opacity-0 hover:before:bg-opacity-100 before:start-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:z-[-1] before:rounded-full ${isSticky ? 'hover:text-white' : 'hover:text-inherit'}`}>{menuItem.label}</Link>
+            <Link href={menuItem.slug} className={`font-inter font-normal text-base xl:text-[18px] relative z-[1] before:transition-all before:duration-200 before:w-[calc(100%+2rem)] before:h-[37px] before:absolute before:bg-black before:bg-opacity-0 hover:before:bg-opacity-100 before:start-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:z-[-1] before:rounded-full hover:text-white`}>{menuItem.label}</Link>
           )}
         </li>
       ))}

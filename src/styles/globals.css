@@ -105,3 +105,15 @@ svg path[data-target] {
     transform: translate3d(0, 0, 0);
   }
 }
+
+.itinerary-link.active {
+  @apply bg-black text-white
+}
+
+.itinerary-link svg {
+  @apply text-black/20
+}
+
+.itinerary-link.active svg {
+  @apply text-white
+}

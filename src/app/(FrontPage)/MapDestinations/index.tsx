@@ -148,7 +148,7 @@ const MapDestinations = () => {
                                         : `calc(${position.left}px - 75px)`,
                                     bottom: `calc(100% - ${position.top}px)` }}
                                     transition={{ duration: 0.2, ease: "easeInOut" }} // Adjusted duration and added ease property
-                                    className="absolute shadow-md overflow-hidden text-white p-4 rounded-xl bg-cover bg-center min-w-[150px] min-h-[150px] flex flex-col justify-end before:content-[''] before:bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000000_100%)] before:absolute before:bottom-0 before:start-0 before:w-full before:h-1/2 before:z-[-1]"
+                                    className="absolute shadow-md overflow-hidden text-white p-4 rounded-xl bg-cover z-[1] bg-center min-w-[150px] min-h-[150px] flex flex-col justify-end before:content-['']  before:bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000000_100%)] before:absolute before:bottom-0 before:start-0 before:w-full before:h-1/2 before:z-[-1]"
                                     style={{
                                         backgroundImage: `url(${item.thumbnail.src})`
                                     }}

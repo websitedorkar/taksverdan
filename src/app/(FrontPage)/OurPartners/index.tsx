@@ -18,6 +18,7 @@ import 'swiper/css/pagination';
 import { Grid, Pagination, Navigation } from 'swiper/modules';
 
 import { slides } from './data';
+import Link from 'next/link';
 
 const OurPartners = () => {
   return (
@@ -93,9 +94,9 @@ const OurPartners = () => {
                     {slides.map(slide => {
                         return (
                             <SwiperSlide key={slide.id}>
-                                <div  className='bg-light h-[115px] rounded-2xl p-4 flex items-center justify-center'>
+                                <Link href='#' className='bg-light h-[115px] rounded-2xl p-4 flex items-center justify-center'>
                                     {<Image src={slide.thumbnail} alt={'slide.date'} />}
-                                </div>
+                                </Link>
                             </SwiperSlide>
                         )
                     })}

@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ btn_label, btn_url, isMap, bgTransparen
                         </span>
                     </Link>
                     <div className="header__menu hidden lg:block">
-                        <Navbar isSticky={isSticky}/>
+                        <Navbar bgTransparent={bgTransparent}/>
                     </div>        
                     <div className="header__action inline-flex">
                         <div className="hidden lg:block">
