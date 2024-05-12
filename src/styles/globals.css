@@ -19,7 +19,7 @@
 }
 
 .has-submenu:hover .submenu-list {
-  @apply visible opacity-100 top-[calc(100%+1.5rem)]
+  @apply visible opacity-100 top-[calc(100%+0.5rem)]
 }
 
 
@@ -67,7 +67,7 @@ svg path[data-target] {
 }
 
 .header--sticky {
-  @apply !fixed top-0 inset-x-0 bg-white;
+  @apply !fixed top-0 inset-x-0 bg-white shadow-sm;
   -webkit-animation-name: header_animation;
   animation-name: header_animation;
   -webkit-animation-duration: 0.4s;
@@ -100,28 +100,4 @@ svg path[data-target] {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-}
-
-
-.main-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.main-wrapper-left {
-  width: 60%;
-  height: 200vh;
-  min-height: 1000px;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-wrapper-right {
-  width: 25%;
-  height: 25vh;
-  min-height: 200px;
-  overflow: auto;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 5%;
 }

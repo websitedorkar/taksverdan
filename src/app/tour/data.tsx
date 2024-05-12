@@ -9,52 +9,62 @@
     interface ItemProps {
         id: number;
         text: string;
+        url: string;
         icon: any,
     }
 
   const itinerary: ItemProps[] = [
     {
       id: 1,
+      url: 'section--about',
       text: 'About',
       icon: Check,
     },
     {
       id: 2,
+      url: 'section--departure',
       text: 'Departure',
       icon: Check,
     },
     {
       id: 3,
+      url: 'section--arrival-hotel',
       text: 'Arrival Hotel',
       icon: Check,
     },
     {
       id: 4,
+      url: 'section--katmandu-tour',
       text: 'Katmandu Tour',
       icon: Check,
     },
     {
       id: 5,
+      url: 'section--departure-2',
       text: 'Departure',
       icon: Check,
     },
     {
       id: 6,
+      url: 'section--weather',
       text: 'Weather',
       icon: Check,
     },
     {
       id: 7,
+      url: 'section--map',
       text: 'Map',
       icon: Check,
     },
     {
       id: 8,
+      url: 'section--whats-include',
       text: 'What\'s include?',
       icon: Check,
     },
     {
       id: 9,
+      url: 'section--price-booking',
       text: 'Price & Booking',
       icon: Check,
     },

@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import PrimaryHeader from "@/components/PrimaryHeader";
+import Header from "@/components/Header";
 
 export default function RootLayout({
   children,
@@ -8,8 +8,8 @@ export default function RootLayout({
 }>) {
   return (
       <div>
-        <PrimaryHeader btn_url="#section-price" btn_label="Price"/>
-        <div className="z-[2] relative">{children}</div>
+      <Header btn_label="Map" isMap={true}/>
+        <div className="z-[2] relative pt-[50px]">{children}</div>
         <Footer />
       </div>
   );

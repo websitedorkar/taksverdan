@@ -64,7 +64,7 @@ interface ButtonToggleProps {
   buttonRef: React.RefObject<HTMLButtonElement>; // Add buttonRef to ButtonToggleProps
 }
 export const ButtonToggle: React.FC<ButtonToggleProps> = ({ toggle, isOpen, buttonRef }) => (
-  <Button variant={'default'} size={'sm'} className='p-0 h-auto text-dark !bg-transparent' onClick={toggle} ref={buttonRef}>
+  <Button variant={'default'} size={'sm'} className='p-0 h-auto text-white !bg-transparent' onClick={toggle} ref={buttonRef}>
     <svg width="26" height="26" viewBox="0 0 23 23">
       <Path
         d="M 2 2.5 L 20 2.5"

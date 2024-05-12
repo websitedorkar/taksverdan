@@ -36,7 +36,7 @@ const Navbar = () => {
         <li key={menuItem.id} className="nav-item">
           {menuItem.submenu ? (
             <div className="has-submenu relative">
-              <Link href={'#'} className="text-dark font-roboto font-normal py-4 text-[18px] flex items-center">{menuItem.label}<ChevronDown className="w-5 mt-1 ms-1 h-auto"/>
+              <Link href={'#'} className="text-white font-inter font-light py-4 text-[18px] flex items-center">{menuItem.label}<ChevronDown className="w-5 mt-1 ms-1 h-auto"/>
               </Link>
               <div className={`submenu-list shadow-lg absolute rounded-lg py-4 px-6 top-[calc(100%+2rem)] bg-white before:w-0 before:h-0 before:border-l-[10px] before:border-l-transparent before:border-r-[10px] before:border-r-transparent before:border-b-[10px] before:border-b-white before:-top-[10px] before:absolute ${menuItem.submenu?.type === 'country' ? ' -start-14 w-[420px] before:start-[6rem]' : ' w-[280px] start-1/2 -translate-x-1/2 before:start-1/2 before:-translate-x-1/2'}`}>
                 { menuItem.submenu?.type === 'country' ? (
@@ -49,7 +49,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <Link href={menuItem.slug} className="text-dark font-inter font-normal text-[18px]">{menuItem.label}</Link>
+            <Link href={menuItem.slug} className="text-white font-inter font-light text-[18px]">{menuItem.label}</Link>
           )}
         </li>
       ))}

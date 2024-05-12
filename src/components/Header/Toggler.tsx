@@ -61,10 +61,11 @@ interface PathProps {
 interface ButtonToggleProps {
   toggle: () => void;
   isOpen: boolean;
+  classNames: string;
   buttonRef: React.RefObject<HTMLButtonElement>; // Add buttonRef to ButtonToggleProps
 }
-export const ButtonToggle: React.FC<ButtonToggleProps> = ({ toggle, isOpen, buttonRef }) => (
-  <Button variant={'default'} size={'sm'} className='p-0 h-auto text-white !bg-transparent' onClick={toggle} ref={buttonRef}>
+export const ButtonToggle: React.FC<ButtonToggleProps> = ({ toggle, isOpen, buttonRef, classNames = 'text-dark' }) => (
+  <Button variant={'default'} size={'sm'} className={`p-0 h-auto !bg-transparent ${classNames}`} onClick={toggle} ref={buttonRef}>
     <svg width="26" height="26" viewBox="0 0 23 23">
       <Path
         d="M 2 2.5 L 20 2.5"
@@ -98,7 +99,11 @@ export const ButtonToggle: React.FC<ButtonToggleProps> = ({ toggle, isOpen, butt
   </Button>
 );
 
-const Toggler: React.FC = () => {
+interface TogglerProps {
+  classNames: string;
+}
+
+const Toggler: React.FC<TogglerProps> = ({ classNames }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -129,9 +134,9 @@ const Toggler: React.FC = () => {
   }, []);
   return (
     <>
-        {isOpen && <div className="fixed w-full h-full bg-black bg-opacity-70 z-20 start-0 top-0"></div>}
+        {isOpen && <div className="fixed w-full h-full  bg-black bg-opacity-70 z-20 start-0 top-0"></div>}
       <div className="relative flex justify-end">
-        <ButtonToggle toggle={() => toggleMenu()} isOpen={isOpen} buttonRef={buttonRef}/>
+        <ButtonToggle toggle={() => toggleMenu()} isOpen={isOpen} buttonRef={buttonRef} classNames={classNames}/>
 
         <motion.div
           animate={isOpen ? 'open' : 'closed'}

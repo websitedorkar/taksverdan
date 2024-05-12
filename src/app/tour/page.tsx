@@ -13,26 +13,22 @@ import Banner_2 from './img/banner-2.png';
 import Banner_3 from './img/banner-3.png';
 import IconCloud from './img/icon-cloud.svg';
 import MapDestinationBanner from './img/map-destinations.png';
-import CheckCircle from './img/check-circle.svg';
 import ShareSVG from './img/share.svg';
 import StarSVG from '@/images/star.svg';
 import ArrowRightSVG from '@/images/long-arrow-right.svg';
 import MapMarker from './img/map-marker.svg';
-import Map from './img/map.svg';
 import Image from 'next/image';
 import { Textarea } from "@/components/ui/textarea"
 import { bookings, includes, itinerary, slides } from './data';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
@@ -45,6 +41,8 @@ import {
 
 import ArrowLeft from '@/images/arrow-left-light.svg';
 import ArrowRight from '@/images/arrow-right-light.svg';
+
+import { Link as ScrollLink } from 'react-scroll';
 
 // Import Swiper React components
 import { Navigation, Pagination } from 'swiper/modules';
@@ -117,7 +115,7 @@ const Tour = () => {
               </Swiper>
             </div>
 
-            <div className="font-roboto font-light text-lg leading-8 text-desc mb-[50px]">
+            <div className="font-roboto font-light text-lg leading-8 text-desc mb-[50px]" id='section--about'>
               <h6 className="text-xl font-poppins font-semibold mb-4">About the Destination</h6>
               <p>Colorful prayer flags fluttering in the wind, experience bustling folk life in Nepal&apos;s capital Kathmandu, enjoy the view of the snow-capped Himalayan mountains from temples, jungles, boats and airplane windows. </p>
               <p>Experience dzongs, temples and unique nature in the unique mountain country of Bhutan with the Tiger&apos;s Nest monastery as the ultimate highlight! Visit the lowlands of Nepal in search of the Bengal tiger and visit the trekking town of Pokhara where we have majestic views of the Annapurna Mountains. There are many highlights on this exciting trip to Nepal and Bhutan!</p>
@@ -130,7 +128,7 @@ const Tour = () => {
             {/* Features */}
             <ul className="pt-[50px]">
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--departure'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">08 Feb, 2025</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={PlaneIcon} alt="plane" className='w-full h-full'/></span>
@@ -160,7 +158,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--arrival-hotel'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">09 Feb, 2025</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={HomeIcon} alt="plane" className='w-full h-full' /></span>
@@ -189,7 +187,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--katmandu-tour'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">10 Feb, 2025</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={HomeIcon} alt="plane" className='w-full h-full' /></span>
@@ -220,7 +218,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--departure-2'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">11 Feb, 2025</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={PlaneIcon} alt="plane" className='w-full h-full'/></span>
@@ -249,7 +247,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--weather'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">Weather</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={CloudIcon} alt="plane" className='w-full h-full'/></span>
@@ -272,7 +270,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--map'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">Map Destinations</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={GlobalIcon} alt="plane" className='w-full h-full'/></span>
@@ -282,7 +280,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t">
+              <li className="py-[50px] border-t" id='section--whats-include'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">What&apos;s include?</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={CheckIcon} alt="plane" className='w-full h-full'/></span>
@@ -301,7 +299,7 @@ const Tour = () => {
                 </div>
               </li>
               {/* List Item */}
-              <li className="py-[50px] border-t" id='section-price'>
+              <li className="py-[50px] border-t" id='section--price-booking'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">Price & Booking</h6>
                 <div className="flex items-start gap-4">
                   <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={DollarIcon} alt="plane" className='w-full h-full'/></span>
@@ -411,14 +409,23 @@ const Tour = () => {
                   <hr className="my-3" />
                   <div className="">
                       <ul className="space-y-3 font-roboto text-[18px] font-normal text-black">
-                        { itinerary.map(( item, index) => (
-                          <li key={item.id ?? index} className='flex items-center gap-2 border py-2 px-4 rounded-lg'>
+                      {itinerary.map((item, index) => (
+                        <li key={item.id ?? index}>
+                          <ScrollLink
+                            to={item.url} 
+                            spy={true} 
+                            smooth={true} 
+                            duration={100} 
+                            offset={-100} // Adjust the offset as needed
+                            className='flex items-center gap-2 border py-2 px-4 rounded-lg'
+                          >
                             <span>
                               <Image src={item.icon} alt={item.text} />
                             </span>
                             <span>{item.text}</span>
-                          </li>
-                        )) }
+                          </ScrollLink>
+                        </li>
+                      ))}
                       </ul>
                   </div>
               </div>
