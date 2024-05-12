@@ -44,9 +44,9 @@ export const NewsletterForm: React.FC<{ placeholder: string }> = ({ placeholder 
             <Input type="email" 
                     value={email}
                     onChange={handleEmailChange}
-                    className='min-w-[200px] xl:min-w-[370px] border-white border-opacity-50 !outline-none !shadow-none bg-transparent text-white placeholder:text-white/50'
+                    className='min-w-[100px] xl:min-w-[370px] border-white border-opacity-50 !outline-none !shadow-none bg-transparent text-white placeholder:text-white/50'
                 placeholder={placeholder} />
-                <Button variant={'secondary'} className='font-roboto'>
+                <Button variant={'secondary'} className='font-roboto hover:bg-white hover:text-black'>
                     SUBSCRIBE
                 </Button>
             </form>

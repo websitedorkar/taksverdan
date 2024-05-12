@@ -136,7 +136,7 @@ const Toggler: React.FC<TogglerProps> = ({ classNames }) => {
     <>
         {isOpen && <div className="fixed w-full h-full  bg-black bg-opacity-70 z-20 start-0 top-0"></div>}
       <div className="relative flex justify-end">
-        <ButtonToggle toggle={() => toggleMenu()} isOpen={isOpen} buttonRef={buttonRef} classNames={classNames}/>
+        <ButtonToggle toggle={() => toggleMenu()} isOpen={isOpen} buttonRef={buttonRef} classNames={`border-0 ${classNames}`}/>
 
         <motion.div
           animate={isOpen ? 'open' : 'closed'}

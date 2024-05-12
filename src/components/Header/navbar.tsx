@@ -13,6 +13,7 @@ import {
 
 import { menus } from "./data";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 interface SubmenuItem {
   id: number;
@@ -28,17 +29,34 @@ interface CountryGroup {
   list: SubmenuItem[];
 }
 
-const Navbar = () => {
+interface NavbarProps {
+  isSticky: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isSticky }) => {
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
+
+  const handleHover = (index: number) => {
+    setHoverIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverIndex(null);
+  };
 
   return (
-    <ul className="header__navbar flex items-center gap-x-[40px]">
-      {menus && menus.map(menuItem => (
+    <ul className="header__navbar flex items-center gap-x-[20px] xl:gap-x-[40px]">
+      {menus && menus.map((menuItem, index) => (
         <li key={menuItem.id} className="nav-item">
           {menuItem.submenu ? (
-            <div className="has-submenu relative">
-              <Link href={'#'} className="font-roboto font-normal py-4 text-[18px] flex items-center">{menuItem.label}<ChevronDown className="w-5 mt-1 ms-1 h-auto"/>
-              </Link>
-              <div className={`submenu-list shadow-lg absolute rounded-lg py-4 px-6 top-[calc(100%+2rem)] bg-white before:w-0 before:h-0 before:border-l-[10px] before:border-l-transparent before:border-r-[10px] before:border-r-transparent before:border-b-[10px] before:border-b-white before:-top-[10px] before:absolute ${menuItem.submenu?.type === 'country' ? ' -start-14 w-[420px] before:start-[6rem]' : ' w-[280px] start-1/2 -translate-x-1/2 before:start-1/2 before:-translate-x-1/2'}`}>
+            <div className={`has-submenu relative ${ (hoverIndex === index || activeIndex === index) ? 'is-active' : ''}`} 
+              onMouseEnter={() => handleHover(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Button variant={'link'} className="has-submenu--button font-roboto font-normal py-4 px-0 outline-none ring-0 !no-underline text-inherit text-base xl:text-[18px] flex items-center"
+              >{menuItem.label}<ChevronDown className="w-5 mt-1 ms-1 h-auto"/></Button>
+              <div className={`submenu-list shadow-lg absolute rounded-lg py-4 px-6 top-[calc(100%+2rem)] bg-white text-dark before:w-0 before:h-0 before:border-l-[10px] before:border-l-transparent before:border-r-[10px] before:border-r-transparent before:border-b-[10px] before:border-b-white before:-top-[10px] before:absolute ${menuItem.submenu?.type === 'country' ? ' -start-14 w-[420px] before:start-[6rem]' : ' w-[280px] start-1/2 -translate-x-1/2 before:start-1/2 before:-translate-x-1/2'}`}>
                 { menuItem.submenu?.type === 'country' ? (
                   <div>
                     <CountryListDropdown list={menuItem.submenu.group}/>
@@ -49,7 +67,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <Link href={menuItem.slug} className="font-inter font-normal text-[18px]">{menuItem.label}</Link>
+            <Link href={menuItem.slug} className={`font-inter font-normal text-base xl:text-[18px] relative z-[1] before:transition-all before:duration-200 before:w-[calc(100%+2rem)] before:h-[37px] before:absolute before:bg-black before:bg-opacity-0 hover:before:bg-opacity-100 before:start-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:z-[-1] before:rounded-full ${isSticky ? 'hover:text-white' : 'hover:text-inherit'}`}>{menuItem.label}</Link>
           )}
         </li>
       ))}

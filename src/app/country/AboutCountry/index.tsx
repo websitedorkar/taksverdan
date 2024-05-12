@@ -27,7 +27,7 @@ const AboutCountry = () => {
             <div className="mb-[50px] text-center">
                 <Image src={Nepal} alt="Nepal" className='inline-block w-[54px] lg:w-[75px]'/>
                 <h2 className='text-3xl lg:text-6xl font-poppins font-semibold'>Nepal</h2> 
-                <p className='lg:hidden'>Lorem Ipsum is simply dummy <br /> text of the printing and typesetting</p>
+                <p>Lorem Ipsum is simply dummy <br /> text of the printing and typesetting</p>
             </div>
 
             <div className="grid grid-cols-12 gap-6">

@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
       <div>
       <Header btn_label="Map" isMap={true}/>
-        <div className="z-[2] relative pt-[50px]">{children}</div>
+        <div className="z-[2] relative pt-[100px]">{children}</div>
         <Footer />
       </div>
   );

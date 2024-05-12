@@ -18,8 +18,12 @@
   @apply invisible opacity-0 transition-all duration-300
 }
 
-.has-submenu:hover .submenu-list {
+.has-submenu.is-active .submenu-list {
   @apply visible opacity-100 top-[calc(100%+0.5rem)]
+}
+
+.has-submenu.is-active .has-submenu--button {
+  @apply relative z-[1] text-white before:transition-all before:duration-200 before:w-[calc(100%+2rem)] before:h-[37px] before:absolute before:bg-black hover:before:bg-opacity-100 before:start-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:z-[-1] before:rounded-full
 }
 
 

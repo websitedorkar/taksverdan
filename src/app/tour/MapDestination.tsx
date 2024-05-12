@@ -8,22 +8,22 @@ import Link from 'next/link';
 import { maps } from './data';
 
 const MapDestination = () => {
-    const [isPopup, setIsPopup] = useState<number | null >(null);
+    const [isPopup, setIsPopup] = useState<number | null >(1);
     const [isOpen, setIsOpen] = useState<string | null >('mobile-path--1');
     const tooltipRef = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ left: 535.108, top: 249.575 });
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (tooltipRef.current && !tooltipRef.current.contains(event.target as Node)) {
-                setIsOpen(null);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+    // useEffect(() => {
+    //     const handleClickOutside = (event: MouseEvent) => {
+    //         if (tooltipRef.current && !tooltipRef.current.contains(event.target as Node)) {
+    //             setIsOpen(null);
+    //         }
+    //     };
+    //     document.addEventListener('mousedown', handleClickOutside);
+    //     return () => {
+    //         document.removeEventListener('mousedown', handleClickOutside);
+    //     };
+    // }, []);
 
     useEffect(() => {
         popupPosition();

@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ btn_label, btn_url, isMap, bgTransparen
                 <div className="flex gap-4 items-center justify-between">
                     {/* LOGO */}
                     <Link href={'/'} className="header__logo inline-flex">
-                        <span className="inline-flex xl:hidden">
+                        {/* <span className="inline-flex xl:hidden">
                             {
                                 bgTransparent && !isSticky ?
                                 <Image src={LOGO_SM_LIGHT} alt='logo' className='h-[44px]'/>
@@ -58,25 +58,33 @@ const Header: React.FC<HeaderProps> = ({ btn_label, btn_url, isMap, bgTransparen
                                 :
                                 <Image src={LOGO_DESKTOP_DARK} alt='logo'  className='h-[56px]'/>
                             }
+                        </span> */}
+                        <span className="inline-flex">
+                            {
+                                bgTransparent && !isSticky ?
+                                <Image src={LOGO_DESKTOP_LIGHT} alt='logo'  className='h-[56px] max-w-[50vw]'/>
+                                :
+                                <Image src={LOGO_DESKTOP_DARK} alt='logo'  className='h-[56px] max-w-[50vw]'/>
+                            }
                         </span>
                     </Link>
-                    <div className="header__menu hidden xl:block">
-                        <Navbar />
+                    <div className="header__menu hidden lg:block">
+                        <Navbar isSticky={isSticky}/>
                     </div>        
                     <div className="header__action inline-flex">
-                        <div className="hidden xl:block">
+                        <div className="hidden lg:block">
                             { isMap ? 
                             <>
-                                <Button variant={ btn_variant ?? 'default'}  size={'sm'} className='px-5' onClick={() => setOpenModal(true)}>{ btn_label }</Button>
+                                <Button variant={ isSticky ? 'default' : btn_variant ?? 'default'}  size={'sm'} className='py-2 px-5 min-w-[80px] uppercase h-auto' onClick={() => setOpenModal(true)}>{ btn_label }</Button>
                                 <MapButton isOpenModal={openModal} setModalOpen={setOpenModal}/>
                             </>
                             :
                             <>
-                                <Link href={btn_url ?? ''}><Button variant={ btn_variant ?? 'default'} size={'sm'} className='px-5'>{ btn_label }</Button></Link>
+                                <Link href={btn_url ?? ''}><Button variant={ btn_variant ?? 'default'} size={'sm'} className='py-2 px-5 min-w-[80px] uppercase h-auto'>{ btn_label }</Button></Link>
                             </>
                             }
                         </div>
-                        <div className="inline-flex xl:hidden">
+                        <div className="inline-flex lg:hidden">
                             <Toggler classNames={bgTransparent && !isSticky ? 'text-white' : 'text-dark'}/>
                         </div>
                     </div>

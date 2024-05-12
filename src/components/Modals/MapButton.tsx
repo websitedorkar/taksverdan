@@ -1,5 +1,6 @@
 "use client";
 import LocationSVG from './img/location.svg';
+import LogoSM from '@/components/Header/img/logo-sm-dark.svg';
 
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
@@ -73,11 +74,9 @@ import { cn } from '@/lib/utils';
     return (
         <Dialog open={isOpenModal} onOpenChange={setModalOpen}>
             <DialogContent className="max-w-[1270px] outline-none ring-0">
-                <div className="">
-                <DialogHeader className='mb-[20px]'>
-                <DialogTitle className='text-lg lg:text-2xl'>Map Destinations</DialogTitle>
-                </DialogHeader>
                 <div className="relative">
+                    <h2 className="'text-xs lg:text-xl absolute top-3 start-3 lg:top-6 lg:start-6 font-medium">Map Destinations</h2>
+                    <Image src={LogoSM} alt='logo' className=' w-[30px] lg:w-[44px] absolute bottom-4 lg:bottom-6 end-4 lg:end-6'/>
                     {isMobile ?
                     <svg width="347" className='w-full h-auto' height="283" viewBox="0 0 347 283" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                     <rect width="347" height="283" fill="url(#pattern0_2087_2)"/>
@@ -173,7 +172,6 @@ import { cn } from '@/lib/utils';
                             )
                         })
                     )}
-                    </div>
                 </div>
             </DialogContent>
         </Dialog>

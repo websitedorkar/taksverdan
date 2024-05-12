@@ -2,6 +2,7 @@
 import React from 'react'
 import PlaneIcon from '@/images/plane.svg';
 import HomeIcon from '@/images/home.svg';
+import MetterIcon from '@/images/icon-metter.svg';
 import BedIcon from '@/images/bed.svg';
 import CloudIcon from '@/images/cloud.svg';
 import GlobalIcon from '@/images/icon-global.svg';
@@ -190,7 +191,7 @@ const Tour = () => {
               <li className="py-[50px] border-t" id='section--katmandu-tour'>
                 <h6 className="text-xl font-poppins font-medium text-black mb-[25px]">10 Feb, 2025</h6>
                 <div className="flex items-start gap-4">
-                  <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={HomeIcon} alt="plane" className='w-full h-full' /></span>
+                  <span className='w-[35px] min-w-[35px] h-[35px] lg:w-[46px] lg:min-w-[46px] lg:h-[46px]'><Image src={MetterIcon} alt="plane" className='w-full h-full' /></span>
                   <div className="h-full border flex-grow border-dark border-opacity-10 rounded-lg p-3 lg:p-4 lg:px-5 bg-white">
                     <div className="text-desc mb-[30px] text-desc text-sm lg:text-base">
                       <h3 className="text-base lg:text-xl font-poppins text-black font-medium mb-2">Kathmandu Tour</h3>
