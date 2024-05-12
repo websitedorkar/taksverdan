@@ -170,5 +170,4 @@ const MapDestinations = () => {
         </section>
     )
 }
-
 export default MapDestinations;
